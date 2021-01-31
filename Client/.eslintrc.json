@@ -15,10 +15,28 @@
     "settings": {
       "import/resolver": {
         "node": {
-          "extensions": [".ts", ".tsx"]
+          "extensions": [".ts", ".tsx", "native.js", ".js", ".jsx"]
         }
       }
     },
     "rules": {
+      // note you must disable the base rule as it can report incorrect errors https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md#how-to-use
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+      // https://stackoverflow.com/questions/41746028/proptypes-in-a-typescript-react-application
+      "react/prop-types": [0],
+      // On ne peut pas écrire écrire de jsx dans le tsx
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+      // Soit eslint demandait d'ajouter l'extension, soit ts demandait de l'enlever
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+     ] 
     }
 }

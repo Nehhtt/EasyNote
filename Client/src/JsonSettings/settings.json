@@ -1,0 +1,5 @@
+{
+    "appSettings": {
+        "serveurIp": "https://easynote-back.herokuapp.com/"
+    }
+}
