@@ -1,11 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
-import { Actions } from 'react-native-router-flux';
-
 import AwesomeAlert from "react-native-awesome-alerts";
 import Spinner from "react-native-loading-spinner-overlay";
-import JsonSettings from "../JsonSettings/settings.json";
 import MyInputText from "./Inputs";
 import { dimensions, colors, font } from "../styles/base";
 import { MySimpleButton } from "./MyButtons";

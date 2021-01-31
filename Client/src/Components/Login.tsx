@@ -1,14 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/extensions */
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
 import AwesomeAlert from "react-native-awesome-alerts";
 import Spinner from "react-native-loading-spinner-overlay";
-import JsonSettings from "../JsonSettings/settings.json";
 import MyInputText from "./Inputs";
 import { dimensions, colors, font } from "../styles/base";
 import { MySimpleButton } from "./MyButtons";
-import { loginUser, useAuthState, useAuthDispatch } from "../context";
+import { loginUser, useAuthDispatch } from "../context";
 
 const styles = StyleSheet.create({
   container: {

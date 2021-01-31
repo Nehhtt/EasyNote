@@ -19,7 +19,7 @@ export async function loginUser(dispatch, loginPayload) {
     const data = await response.json();
     if (data.data) {
       dispatch({ type: "LOGIN_SUCCESS", payload: data.data });
-      AsyncStorage.setItem("currentUser", JSON.stringify(data));
+      await AsyncStorage.setItem("currentUser", JSON.stringify(data));
       return data;
     }
 
@@ -46,7 +46,7 @@ export async function signUpUser(dispatch, signUpPayload) {
 
     if (data.data) {
       dispatch({ type: "SIGNUP_SUCCESS", payload: data });
-      AsyncStorage.setItem("currentUser", JSON.stringify(data));
+      await AsyncStorage.setItem("currentUser", JSON.stringify(data));
       return data;
     }
     dispatch({ type: "SIGNUP_ERROR", error: data.error.message });
@@ -59,7 +59,7 @@ export async function signUpUser(dispatch, signUpPayload) {
 
 export async function logout(dispatch) {
   dispatch({ type: "LOGOUT" });
-  AsyncStorage.removeItem("currentUser");
-  AsyncStorage.removeItem("token");
+  await AsyncStorage.removeItem("currentUser");
+  await AsyncStorage.removeItem("token");
   return "success";
 }

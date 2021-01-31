@@ -1,19 +1,8 @@
-import React, { FunctionComponent } from "react";
-import { Redirect, Route } from "react-router-dom";
+import React from "react";
+import { Redirect, Route } from "react-router-native";
 import { useAuthState } from "../context";
 
-type AppRoutesProps = {
-  component: React.LazyExoticComponent<() => JSX.Element>;
-  path: string;
-  isPrivate: boolean;
-};
-
-const AppRoutes: FunctionComponent<AppRoutesProps> = ({
-  component: Component,
-  path,
-  isPrivate,
-  ...rest
-}) => {
+const AppRoutes = ({ component: Component, path, isPrivate, ...rest }) => {
   const userDetails = useAuthState();
   return (
     <Route

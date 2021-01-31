@@ -1,11 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react";
-import {
-  OpaqueColorValue,
-  StyleProp,
-  TextInput,
-  ViewStyle,
-} from "react-native";
+import { StyleProp, TextInput, ViewStyle } from "react-native";
 
 function MyInputText(
   // color: string | typeof OpaqueColorValue | undefined,

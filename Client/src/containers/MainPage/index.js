@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from "react";
+import { Text } from "react-native";
 
-const MainPage = (): JSX.Element => {
-  return <div>MainPage</div>;
+const MainPage = () => {
+  return <Text>MainPage</Text>;
 };
 
 export default MainPage;
